@@ -2,6 +2,6 @@ export class User  {
 
 	constructor(
 	    public id: number,
-	    public availablePositionsJson: string
+	    public availablePositionsJson: any
 	  ) {  }
 }

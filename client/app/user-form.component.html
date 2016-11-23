@@ -1,11 +1,11 @@
 {{diagnostic}}
 
 <div class="container">
-    <form>
+    <form #userForm="ngForm">
       <div class="form-group">
         <label for="identifyer">Usuário:</label>
         <input type="number" class="form-control" id="identifyer" [(ngModel)]="model.id" name="id" required>
       </div>
-      <button type="submit" class="btn btn-default">Enviar</button>
+      <button type="button" class="btn btn-default" [disabled]="!userForm.form.valid" (click)="getPositions();">Enviar</button>
     </form>
 </div>
