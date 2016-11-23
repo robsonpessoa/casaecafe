@@ -1,0 +1,8 @@
+<div class="container" *ngIf="user">
+    <h2>Usuário</h2>
+    <div><label>id: </label>{{user.id}}</div>
+    <div>
+      <label>vagasJson: </label>
+      <input [(ngModel)]="user.availablePositionsJson" placeholder="vagasJson"/>
+    </div>
+</div>	

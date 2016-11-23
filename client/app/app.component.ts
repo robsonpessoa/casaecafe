@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  selector: 'casa-e-cafe',
+  template: `<h1>{{title}}</h1>
+  			 <user-form></user-form>
+  `,
 })
-export class AppComponent  { name = 'Angular'; }
+
+export class AppComponent  { 
+	title = 'CasaeCafe.com REST Client';
+}
