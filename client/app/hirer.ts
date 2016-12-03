@@ -1,4 +1,6 @@
-export class Hirer  {
+import { OnInit } from '@angular/core';
+
+export class Hirer implements OnInit {
 
 	constructor(
 	    public id: number,
@@ -10,5 +12,10 @@ export class Hirer  {
 	    public email: string,
 	    public mobile_phone: string,
 	    public is_plan_active: boolean
-	  ) {  }
+	  ) { }
+
+	ngOnInit(){
+     	//called after the constructor and called  after the first ngOnChanges() 
+     	id = 1;
+  	}
 }

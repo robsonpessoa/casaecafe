@@ -8,6 +8,7 @@ import { UserDetailComponent } from './user-detail.component';
 import { UserFormComponent } from './user-form.component';
 import { NewOpportunityComponent } from './new-opportunity.component';
 import { HomeComponent } from './home.component';
+import { LocationComponent } from './location.component';
 import { HttpModule }    from '@angular/http';
 
 const appRoutes: Routes = [
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   					UserDetailComponent,
   					UserFormComponent,
   					NewOpportunityComponent,
-  					HomeComponent ],
+  					HomeComponent,
+            LocationComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

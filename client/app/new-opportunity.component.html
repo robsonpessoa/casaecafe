@@ -1,0 +1,46 @@
+<div class="container">
+    <form #userForm="ngForm">
+      <div class="form-group">
+        <!-- ID -->
+        <label for="identifyer">ID:</label>
+        <input type="number" min="1" max="999" class="form-control" id="identifyer" [ngModel]="id" (ngModelChange)="onChangeId($event)" name="id" required>
+
+        <!-- TITLE -->
+        <label for="title">Título:</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="model.title" name="title" required>
+
+        <!-- TITLE -->
+        <label for="description">Descrição:</label>
+        <textarea type="text" class="form-control" id="description" [(ngModel)]="model.description" name="description" required></textarea>
+
+        <!-- HIRER -->
+        <label for="hirer">Contratante:</label>
+        <select class="form-control" id="hirer" [ngModel]="hirer" (ngModelChange)="onChangeHirer($event)" name="hirer" required>
+          <option *ngFor="let hirer of hirers; let i = index" [value]="i">{{hirer.name}}</option>
+        </select>
+
+        <!-- LOCATION -->
+        <location [(ngModel)]="model.location" name="location"></location>
+
+        <!-- FREQUENCY -->
+        <label for="frequency">Frequência:</label>
+        <input type="text" class="form-control" id="frequency" [(ngModel)]="model.frequency" name="frequency" required>
+
+        <!-- CATEGORY -->
+        <label for="category">Categoria:</label>
+        <select class="form-control" id="category" [ngModel]="category" (ngModelChange)="onChangeCategory($event)" name="category" required>
+          <option *ngFor="let category of categories; let i = index" [value]="i">{{category.name}}</option>
+        </select>
+
+        <!-- SALARY -->
+        <label for="salary">Salário:</label>
+        <input type="number" min="0.00" step="0.01" class="form-control" id="salary" [(ngModel)]="model.salary_requirements" name="salary" required>
+
+        <!-- STARTS -->
+        <label for="starts">Início:</label>
+        <input type="text" class="form-control" id="starts" [(ngModel)]="model.starts" name="starts" required>
+
+      </div>
+      <button type="button" class="btn btn-default" [disabled]="!userForm.form.valid" (click)="getPositions();">Enviar</button>
+    </form>
+</div>

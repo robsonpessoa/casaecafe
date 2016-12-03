@@ -1,0 +1,40 @@
+<div class="container location-box">
+    <form #userForm="ngForm">
+      <div class="form-group">
+        <!-- NEIGHBORHOOD -->
+        <label for="neighborhood">Bairro:</label>
+        <input type="text" class="form-control" id="neighborhood" [(ngModel)]="model.neighborhood" name="neighborhood" required>
+
+        <!-- ADDRESS -->
+        <label for="address">Endereço:</label>
+        <input type="text" class="form-control" id="address" [(ngModel)]="model.address" name="address" required>
+
+        <!-- ADDRESS TYPE -->
+        <label for="address_type">Tipo:</label>
+        <input type="text" class="form-control" id="address_type" [(ngModel)]="model.address_type" name="address_type" required>
+
+        <!-- LAT -->
+        <label for="latitude">Latitude:</label>
+        <input type="number" class="form-control" id="latitude" [(ngModel)]="model.latitude" name="latitude" required>
+
+        <!-- LONG -->
+        <label for="longitude">Longitude:</label>
+        <input type="number" class="form-control" id="longitude" [(ngModel)]="model.longitude" name="longitude" required>
+
+        <!-- CITY -->
+        <label for="city">Cidade:</label>
+        <select class="form-control" id="city" [ngModel]="city" (ngModelChange)="onChange($event)" name="city" required>
+          <option *ngFor="let c of cities; let i = index" [value]="i">{{ c.name }}</option>
+        </select>
+
+        <!-- ZIPCODE -->
+        <label for="zipcode">CEP:</label>
+        <input type="text" class="form-control" id="zipcode" [(ngModel)]="model.zipcode" name="zipcode" required>
+
+        <!-- STATE -->
+        <label for="state">Estado:</label>
+        <input type="text" class="form-control" id="state" [(ngModel)]="model.state" name="state" required>
+
+      </div>
+    </form>
+</div>
