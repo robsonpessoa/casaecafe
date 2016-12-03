@@ -1,11 +1,94 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+body {
+	background-color: #111517 !important;
+	color: #FFF !important;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	font-size: 15px;
 }
 
-.top_bar {
-	color: #AAA;
-	background-color: #000;
-	padding: 10px;
+.topbar {
+	color: #FFF;
+	padding: 20px 15px 20px 15px;
+	text-align: right;
+	text-transform: uppercase;
+	font-family: "Russo One", sans-serif;
+	font-size: 60px;
+	width: 40%;
+	float:right;
+}
+
+.topbar h1 {
+  color: #FFF;
+  font-size: 100%;
+}
+
+hr { 
+	width:20%; 
+	height:40px; 
+	background: #fff; 
+	content:"";
+	margin-left: 0px;
+}
+
+.topbar h1 em {
+	color: #888;
+}
+
+.menu {
+	background-color: #111517;
+	text-transform: uppercase;
+	font-family: "Montserrat Subrayada", sans-serif;
+	padding: 20px 15px 20px 15px;
+	margin-left: 10px;
+	float:left;
+	display: block;
+}
+
+.menu a.menu-item {
+	color: #888;
+	font-size: 20px;
+	padding: 20px 15px 20px 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: inline-block;
+	text-decoration: none !important;
+}
+
+.menu a.menu-item:link a.menu-item:visited a.menu-item:active {
+	text-decoration: none !important;
+}
+
+.menu a.menu-item:hover {
+	color: #EF0D33;
+	text-decoration: none !important;
+}
+
+.container {
+	background-color: #EF0D33 !important;
+	display: flex;
+	width: 70%;
+	padding: 10px 15px 10px 15px;
+	margin: auto;
+}
+
+.inside-box {
+	width: 100% !important;
+	display: flex;
+	background-color: #111517 !important;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-child {
+  width: 100%; 
+  height: 70px; 
+  margin: 5px 10px 5px 10px;
 }
