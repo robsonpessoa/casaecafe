@@ -5,7 +5,7 @@ import { User } from './user';
 
 @Injectable()
 export class PositionsService {
-	private positionsUrl = 'http:\/\/ec2-35-164-139-210.us-west-2.compute.amazonaws.com';  // URL to web api
+	private positionsUrl = 'http:\/\/ec2-35-164-223-211.us-west-2.compute.amazonaws.com';  // URL to web api
 
 	constructor(private httpClient: Http) { }
 
