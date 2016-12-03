@@ -3,15 +3,19 @@ import { User }    from './user';
 import { Hirer }    from './hirer';
 import { JobCategory }    from './job-category';
 import { Opportunity }    from './opportunity';
+import { OpportunitiesService } from './opportunities.service';
 
 @Component({
   moduleId: module.id,
   selector: 'new-opportunity',
-  templateUrl: 'new-opportunity.component.html'
+  templateUrl: 'new-opportunity.component.html',
+  providers: [OpportunitiesService]
 })
 
 export class NewOpportunityComponent {
 	model = new Opportunity();
+
+	constructor(private opportunitiesService: OpportunitiesService) {}
 
 	get diagnostic() { 
 		return JSON.stringify(this.model) ;
@@ -48,4 +52,9 @@ export class NewOpportunityComponent {
 	onChangeCategory(index) {
 		this.model.category = this.categories[index];
 	}
+
+	save() : void { 
+	    this.submitted = true;
+	    this.opportunitiesService.save(this.model);
+  	}
 }

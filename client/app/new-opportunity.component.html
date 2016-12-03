@@ -40,7 +40,8 @@
         <label for="starts">Início:</label>
         <input type="text" class="form-control" id="starts" [(ngModel)]="model.starts" name="starts" required>
 
+        <button type="button" class="btn btn-default" [disabled]="!userForm.form.valid" (click)="save();">Enviar</button>
+        
       </div>
-      <button type="button" class="btn btn-default" [disabled]="!userForm.form.valid" (click)="getPositions();">Enviar</button>
     </form>
 </div>

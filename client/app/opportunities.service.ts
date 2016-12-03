@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { User } from './user';
 
 @Injectable()
-export class PositionsService {
-	private positionsUrl = 'http:\/\/ec2-35-164-223-211.us-west-2.compute.amazonaws.com';  // URL to web api
+export class OpportunitiesService {
+	private url = 'http:\/\/ec2-35-164-223-211.us-west-2.compute.amazonaws.com';  // URL to web api
 
 	constructor(private httpClient: Http) { }
 
-	getPositionsByUser(user : User) : void {
-		const url = `${this.positionsUrl}/hirers/${user.id}/opportunities`;
+	save(opportunity : Opportunity) : void {
+		const url = `${this.url}/opportunities`;
 
-		return this.httpClient.get(url)
+		let headers = new Headers({ 'Content-Type': 'application/json' });
+    	let options = new RequestOptions({ headers: headers });
+
+		return this.httpClient.post(url, opportunity, options)
                .toPromise()
                .then(result => {
-               		user.availablePositionsJson = result.json();
+               		alert("A vaga foi criada com sucesso.");
+               		window.location.reload();
                })
                .catch(this.handleError);
 	}
